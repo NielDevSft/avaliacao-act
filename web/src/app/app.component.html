@@ -1,31 +1,39 @@
-<mat-card>
-  <mat-card-title>Lançamentos</mat-card-title>
+<mat-grid-list cols="2">
   <mat-card>
-    <mat-card-subtitle>form</mat-card-subtitle>
-    <form class="example-form">
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Descrição</mat-label>
-        <input matInput placeholder="Descrição do Lançamento" value="">
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Tipo da transação</mat-label>
-        <mat-select>
-          <mat-option value="1">Entrada</mat-option>
-          <mat-option value="2">Saida</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Data</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Valor Lançamento</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="0">
-      </mat-form-field>
-      <button mat-button>Basic</button>
-    </form>
+    <mat-card-title>Lançamentos</mat-card-title>
+    <mat-grid-tile rowspan="1" colspan="1">
+      <mat-card >
+        <mat-card-subtitle>form</mat-card-subtitle>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <input matInput placeholder="Descrição do Lançamento" value="">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Tipo da transação</mat-label>
+            <mat-select>
+              <mat-option value="1">Entrada</mat-option>
+              <mat-option value="2">Saida</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Data</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Valor Lançamento</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="0">
+          </mat-form-field>
+          <button mat-button>Basic</button>
+        </form>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="2" colspan="2">
+      <mat-card fxFlex="100%">
+        <app-lancamento-table></app-lancamento-table>
+      </mat-card>
+    </mat-grid-tile>
   </mat-card>
-</mat-card>
+</mat-grid-list>
