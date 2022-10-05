@@ -24,18 +24,22 @@ public class Lancamento {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "increment")
     private Long id;
 
-    private String des_lancamento;
+	@JsonFormat
+    private String desLancamento;
     
     @JsonFormat(pattern="dd/MM/yyyy")
-	private Date dta_trasaction_at;
+	private Date dtaTrasactionAt;
 
 	@JsonFormat(pattern="dd/MM/yyyy")
-	private Date dta_created_at;
+	private Date dtaCreatedAt;
 	
 	@JsonFormat(pattern="dd/MM/yyyy")
-	private Date dta_updated_at;
+	private Date dtaUpdatedAt;
 	
-    private Integer ind_entrada_saida;
-    private Integer val_lancamento;
+	@JsonFormat
+    private Integer indEntradaSaida;
+	
+	@JsonFormat
+    private Integer valLancamento;
 
 }
