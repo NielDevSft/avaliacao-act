@@ -26,4 +26,32 @@ public class LancamentoController {
         return lancamentoRepository.save(lancamento);
     }
 
+    @GetMapping("/{id}")
+	public Lancamento getById(@PathVariable Long id) {
+		return lancamentoRepository.findById(id).get();
+	}
+    
+
+    @PutMapping("/{id}")
+    public Lancamento replace(@RequestBody Lancamento lancamentoNovo, @PathVariable Long id) {
+      
+      return lancamentoRepository.findById(id)
+        .map(lancamento -> {
+        	lancamento.setDesLancamento(lancamentoNovo.getDesLancamento());
+        	lancamento.setDtaTrasactionAt(lancamentoNovo.getDtaTrasactionAt());
+        	lancamento.setDtaCreatedAt(lancamentoNovo.getDtaCreatedAt());
+        	lancamento.setDtaUpdatedAt(lancamentoNovo.getDtaUpdatedAt());
+        	lancamento.setIndEntradaSaida(lancamentoNovo.getIndEntradaSaida());
+        	lancamento.setValLancamento(lancamentoNovo.getIndEntradaSaida());
+          return lancamentoRepository.save(lancamento);
+        }).orElseGet(() -> {
+        	lancamentoNovo.setId(id);
+            return lancamentoRepository.save(lancamentoNovo);
+          });
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+    	lancamentoRepository.deleteById(id);
+    }
 }
