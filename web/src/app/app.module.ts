@@ -13,14 +13,17 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatNativeDateModule } from '@angular/material/core';
 import { LancamentoTableComponent } from './components/lancamento-table/lancamento-table.component';
+import { LancamentoFormComponent } from './components/lancamento-form/lancamento-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LancamentoTableComponent
+    LancamentoTableComponent,
+    LancamentoFormComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { LancamentoTableComponent } from './components/lancamento-table/lancamen
     MatSelectModule,
     MatGridListModule,
     MatButtonModule,
+    MatDividerModule,
     MatRadioModule,
     MatTableModule,
     MatDatepickerModule,
