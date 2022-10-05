@@ -8,18 +8,20 @@ import com.administrativo.repositories.LancamentoRepository;
 
 import java.util.List;
 
-@RestController
 @RequestMapping("lancamento")
+@RestController
 public class LancamentoController {
 
 
     @Autowired
     LancamentoRepository lancamentoRepository;
 
+    @GetMapping
     public List<Lancamento> getAllLancamento(){
         return lancamentoRepository.findAll();
     }
     
+    @PostMapping
     public Lancamento saveLancamento(@RequestBody Lancamento lancamento){
         return lancamentoRepository.save(lancamento);
     }
