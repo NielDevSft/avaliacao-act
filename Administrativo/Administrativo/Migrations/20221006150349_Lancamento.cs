@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Administrativo.Migrations
 {
-    public partial class CriacaoInicial : Migration
+    public partial class Lancamento : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,18 +14,18 @@ namespace Administrativo.Migrations
                 name: "tab_lancamento",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
+                    id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     des_lancamento = table.Column<string>(type: "text", nullable: true),
-                    ind_entrada_saida = table.Column<int>(name: "ind_entrada_saida", type: "integer", nullable: false),
+                    ind_entrada_saida = table.Column<int>(type: "integer", nullable: false),
                     val_lancamento = table.Column<decimal>(type: "numeric", nullable: false),
-                    dta_lancamento = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    dta_create_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    dta_updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    dta_lancamento = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    dta_create_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    dta_updated_at = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tab_lancamento", x => x.Id);
+                    table.PrimaryKey("PK_tab_lancamento", x => x.id);
                 });
         }
 

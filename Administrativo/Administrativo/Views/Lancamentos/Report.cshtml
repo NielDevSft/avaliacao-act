@@ -47,4 +47,62 @@
         </dt>
     </dl>
     <a asp-action="Index">Back to List</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Lancamento.DesLancament)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lancamento.IndEntradaSaida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lancamento.ValLancamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lancamento.DtaLancamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lancamento.DtaCreateAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lancamento.DtaUpdatedAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Lancamentos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DesLancament)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IndEntradaSaida)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValLancamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DtaLancamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DtaCreateAt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DtaUpdatedAt)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
 </div>

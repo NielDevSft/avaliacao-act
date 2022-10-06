@@ -175,10 +175,10 @@ namespace Administrativo.Controllers
         public async Task<IActionResult> Report(DateTime diaReferencia)
         {
             var inicioDia = new DateTime(diaReferencia.Year, diaReferencia.Month, diaReferencia.Day);
-            var lancametos = _context.Lancamentos
+            var lancametos = await _context.Lancamentos
                 .Where(lan => inicioDia <= lan.DtaLancamento 
                 && inicioDia.AddHours(24) >= lan.DtaLancamento)
-                .ToList()
+                .ToListAsync()
                 ?? new List<Lancamento>();
 
             var report = new RelatotioDiario(lancametos);

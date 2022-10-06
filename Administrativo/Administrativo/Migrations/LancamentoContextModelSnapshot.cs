@@ -27,7 +27,7 @@ namespace Administrativo.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasColumnName("Id");
+                        .HasColumnName("id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
@@ -36,18 +36,18 @@ namespace Administrativo.Migrations
                         .HasColumnName("des_lancamento");
 
                     b.Property<DateTime>("DtaCreateAt")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp without time zone")
                         .HasColumnName("dta_create_at");
 
                     b.Property<DateTime>("DtaLancamento")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp without time zone")
                         .HasColumnName("dta_lancamento");
 
-                    b.Property<DateTime>("dtaUpdatedAt")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<DateTime>("DtaUpdatedAt")
+                        .HasColumnType("timestamp without time zone")
                         .HasColumnName("dta_updated_at");
 
-                    b.Property<int>("IndEntradaSaIda")
+                    b.Property<int>("IndEntradaSaida")
                         .HasColumnType("integer")
                         .HasColumnName("ind_entrada_saida");
 

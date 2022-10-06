@@ -15,6 +15,7 @@ namespace Administrativo.Models
         public DateTime DiaReferencia { get; set; }
         [Display(Name = "Todos lancamentos do dia")]
         public List<Lancamento> Lancamentos { get; set; }
+        public Lancamento Lancamento { get; set; }
 
         public RelatotioDiario(List<Lancamento> lancamentos)
         {
