@@ -1,0 +1,62 @@
+﻿@model Administrativo.Models.Lancamento
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Lancamento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="DesLancament" class="control-label"></label>
+                <input asp-for="DesLancament" class="form-control" />
+                <span asp-validation-for="DesLancament" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndEntradaSaida" class="control-label"></label>
+                <select asp-for="IndEntradaSaida" class="form-control">
+                    <option value="1">Entrada</option>
+                    <option value="2">Saida</option>
+                </select>
+                <span asp-validation-for="IndEntradaSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValLancamento" class="control-label"></label>
+                <input asp-for="ValLancamento" class="form-control" />
+                <span asp-validation-for="ValLancamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DtaLancamento" class="control-label"></label>
+                <input asp-for="DtaLancamento" class="form-control" />
+                <span asp-validation-for="DtaLancamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DtaCreateAt" class="control-label"></label>
+                <input type="hidden" asp-for="DtaCreateAt" class="form-control" />
+                <span asp-validation-for="DtaCreateAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DtaUpdatedAt" class="control-label"></label>
+                <input type="hidden" asp-for="DtaUpdatedAt" class="form-control" />
+                <span asp-validation-for="DtaUpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

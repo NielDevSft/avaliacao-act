@@ -1,5 +1,21 @@
 version: "3.8"
 services:
+  dotnet-api: 
+    container_name: dotnet-api
+    restart: unless-stopped
+    build:
+      context: ./Administrativo
+      dockerfile: Dockerfile
+    ports:
+      - ${PORT}:80
+    depends_on:
+      - db
+    environment:
+      PG_HOST: ${PG_HOST}
+      PG_PORT: ${PG_PORT}
+      PG_USER: ${PG_USER}
+      PG_PASSWORD: ${PG_PASSWORD}
+      PG_DB_NAME: ${PG_DB_NAME}
   db:
     image: postgres:14.0-alpine
     restart: always

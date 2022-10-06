@@ -1,0 +1,54 @@
+﻿@model Administrativo.Models.Lancamento
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Lancamento</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DesLancament)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DesLancament)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IndEntradaSaida)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IndEntradaSaida)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ValLancamento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ValLancamento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DtaLancamento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DtaLancamento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DtaCreateAt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DtaCreateAt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DtaUpdatedAt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DtaUpdatedAt)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
