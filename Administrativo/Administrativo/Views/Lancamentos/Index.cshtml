@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Administrativo.Models.Lancamento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+    <a asp-action="Report">Generate Report</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DesLancament)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndEntradaSaida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValLancamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DtaLancamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DtaCreateAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DtaUpdatedAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesLancament)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndEntradaSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValLancamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtaLancamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtaCreateAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtaUpdatedAt)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
