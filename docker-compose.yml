@@ -6,13 +6,14 @@ services:
     build:
       context: ./java-api
       dockerfile: ./Dockerfile
-    image: spring_boo_com_mysql/api
     ports:
-      - '8080:8080'
+      - '8080:8081'
       - '5005:5005'
     environment:
       - ADDITIONAL_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Xmx1G -Xms128m -XX:MaxMetaspaceSize=128m
       - PROFILE=dev
+    depends_on:
+      - db
     links:
       - db
   dotnet-api: 

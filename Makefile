@@ -1,14 +1,14 @@
-include ./api/.env
+include ./java-api/.env
 
 .PHONY: up
 
 up:
-	docker-compose --env-file .\api\.env up -d
+	docker-compose --env-file .\java-api\.env up -d
 
 .PHONY: down
 
 down:
-	docker-compose --env-file .\api\.env down
+	docker-compose --env-file .\java-api\.env down
 
 .PHONY: logs
 

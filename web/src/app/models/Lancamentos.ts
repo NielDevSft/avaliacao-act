@@ -1,9 +1,13 @@
-export default class Lancamentos {
+import { TipoTransacao } from "./TipoTransacao";
+
+export default class Lancamento {
   constructor(
     public id: number,
     public desLancamento: string,
-    public indEntradaSaida: number,
+    public indEntradaSaida: TipoTransacao,
     public valLancamento: number,
-    public dtaTransacao: string,
+    public dtaLancamento: Date,
+    public dtaCreatedAt: Date,
+    public dtaUpdatedAt: Date
   ) {}
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Lancamentos from 'src/app/models/Lancamentos';
+import Lancamento from 'src/app/models/Lancamentos';
+import { LancamentoService } from '../../services/lancamento.service';
 
 @Component({
   selector: 'app-lancamento-table',
@@ -8,7 +9,9 @@ import Lancamentos from 'src/app/models/Lancamentos';
 })
 export class LancamentoTableComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private faturamentoService: LancamentoService,
+  ) { }
   displayedColumns: string[] = [
     'id',
     'desLancamento',
@@ -16,17 +19,13 @@ export class LancamentoTableComponent implements OnInit {
     'valLancamento',
     'dtaTransacao'
   ]
-  dataSource: Lancamentos[] = []
-  ELEMENT_DATA: Lancamentos[] = [
-    {
-      id: 0,
-      desLancamento: 'teste',
-      indEntradaSaida: 1,
-      valLancamento: 1.3,
-      dtaTransacao: '01/01/1997'}
-];
+  dataSource: Lancamento[] = []
+
 ngOnInit(): void {
-  this.dataSource = this.ELEMENT_DATA
+    console.log('nada',this.faturamentoService)
+    this.faturamentoService.getAll().subscribe((resp)=> {
+      this.dataSource = resp
+    })
   }
 
 }

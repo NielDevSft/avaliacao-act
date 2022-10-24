@@ -11,7 +11,7 @@ namespace Administrativo.Models
 
         [Column("des_lancamento")]
         [Display(Name = "Descrição Lancamento")]
-        public string? DesLancament { get; set; }
+        public string? DesLancamento { get; set; }
 
         [Column("ind_entrada_saida")]
         [Display(Name = "Tipo transação")]

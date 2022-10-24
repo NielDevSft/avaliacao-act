@@ -54,7 +54,7 @@ namespace Administrativo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DesLancament,IndEntradaSaida,ValLancamento,DtaLancamento,DtaCreateAt,DtaUpdatedAt")] Lancamento lancamento)
+        public async Task<IActionResult> Create([Bind("Id,DesLancamento,IndEntradaSaida,ValLancamento,DtaLancamento,DtaCreateAt,DtaUpdatedAt")] Lancamento lancamento)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace Administrativo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,DesLancament,IndEntradaSaida,ValLancamento,DtaLancamento,DtaCreateAt,DtaUpdatedAt")] Lancamento lancamento)
+        public async Task<IActionResult> Edit(long id, [Bind("Id,DesLancamento,IndEntradaSaida,ValLancamento,DtaLancamento,DtaCreateAt,DtaUpdatedAt")] Lancamento lancamento)
         {
             if (id != lancamento.Id)
             {

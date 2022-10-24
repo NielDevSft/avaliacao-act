@@ -31,7 +31,7 @@ namespace Administrativo.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<string>("DesLancament")
+                    b.Property<string>("DesLancamento")
                         .HasColumnType("text")
                         .HasColumnName("des_lancamento");
 

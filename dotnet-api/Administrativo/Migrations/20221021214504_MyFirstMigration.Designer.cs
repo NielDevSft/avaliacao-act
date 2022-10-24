@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Administrativo.Migrations
 {
     [DbContext(typeof(LancamentoContext))]
-    [Migration("20221006150349_Lancamento")]
-    partial class Lancamento
+    [Migration("20221021214504_MyFirstMigration")]
+    partial class MyFirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,7 +33,7 @@ namespace Administrativo.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<string>("DesLancament")
+                    b.Property<string>("DesLancamento")
                         .HasColumnType("text")
                         .HasColumnName("des_lancamento");
 

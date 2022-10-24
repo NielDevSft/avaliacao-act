@@ -18,6 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatNativeDateModule } from '@angular/material/core';
 import { LancamentoTableComponent } from './components/lancamento-table/lancamento-table.component';
 import { LancamentoFormComponent } from './components/lancamento-form/lancamento-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { LancamentoFormComponent } from './components/lancamento-form/lancamento
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MatNativeDateModule,
     BrowserAnimationsModule,

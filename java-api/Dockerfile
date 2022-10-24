@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM openjdk:17
 
 ARG PROFILE
 ARG ADDITIONAL_OPTS
@@ -8,11 +8,11 @@ ENV ADDITIONAL_OPTS=${ADDITIONAL_OPTS}
 
 WORKDIR /opt/spring_boot
 
-COPY /target/spring-boot*.jar spring_boot_com_mysql.jar
+COPY /target/*.jar administrativo-0.0.1-SNAPSHOT.jar
 
 SHELL ["/bin/sh", "-c"]
 
 EXPOSE 5005
 EXPOSE 8080
 
-CMD java ${ADDITIONAL_OPTS} -jar spring_boot_com_mysql.jar --spring.profiles.active=${PROFILE}
+CMD java ${ADDITIONAL_OPTS} -jar administrativo-0.0.1-SNAPSHOT.jar --spring.profiles.active=${PROFILE}
